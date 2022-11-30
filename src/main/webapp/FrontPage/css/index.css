@@ -1,0 +1,543 @@
+.hide {
+    display: none;
+}
+
+.gameInfo .game-recom {
+    width: 480px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.gameInfo .game-recom .recom-carousel {
+    height: 210px;
+    width: 100%;
+    background: -webkit-linear-gradient(left top, #6CD0FB, #0F80CB); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(bottom right, #6CD0FB, #0F80CB); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(bottom right, #6CD0FB, #0F80CB); /* Firefox 3.6 - 15 */
+    background: linear-gradient(to bottom right, #6CD0FB, #0F80CB);
+}
+
+.gameInfo .game-recom .recom-carousel ul li {
+    color: #ffffff;
+    width: 380px;
+    height: 180px;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+.gameInfo .game-recom .recom-carousel ul li a {
+    color: #fff;
+}
+
+.gameInfo .game-recom .recom-carousel ul li a > * {
+    margin-top: 10px;
+}
+
+.gameInfo .game-recom .recom-carousel ul li a h4 {
+    background-color: #ffffff;
+    color: #2E97D8;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 20px;
+    padding-left: 20px;
+    width: 360px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.gameInfo .game-recom .calendarLists {
+    width: 100%;
+    height: 630px;
+    border: 1px solid #B6B6B6;
+    border-top: none;
+    overflow: hidden;
+}
+
+.gameInfo .game-recom .calendarLists .title {
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.gameInfo .game-recom .calendarLists .chooseTime {
+    padding: 5px 0 20px 0;
+    width: 100%;
+    text-align: center;
+    border-bottom: 2px solid #B6DCF1;
+}
+
+.gameInfo .game-recom .calendarLists .chooseTime p span {
+    cursor: pointer;
+}
+
+.gameInfo .game-recom .calendarLists .listOfEvents ul {
+    margin-top: 10px;
+    height: 522px;
+    color: #697277;
+    overflow: hidden;
+}
+
+.gameInfo .game-recom .calendarLists .listOfEvents ul li {
+    background-color: #D1E8F5;
+    color: #697277;
+}
+
+.gameInfo .game-recom .calendarLists .listOfEvents ul li {
+    border-bottom: 18px solid #ffffff;
+    border-left: 10px solid #fff;
+    border-right: 10px solid #fff;
+}
+
+.gameInfo .game-recom .calendarLists .listOfEvents ul li a p {
+    padding-top: 10px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+    color: #909A9F;
+    font-size: 14px;
+}
+
+.gameInfo .game-recom .calendarLists .listOfEvents ul li p:first-child {
+    color: #353535;
+    font-size: 18px;
+}
+
+.gameInfo .game-recom .calendarLists .listOfEvents ul li p:last-child {
+    margin-bottom: 5px;
+}
+
+.gameInfo .game-situation {
+    width: 700px;
+}
+
+.gameInfo .game-situation .title {
+    display: flex;
+    justify-content: space-between;
+    height: 55px;
+    line-height: 55px;
+    background-color: #E7E7E7;
+    color: #188BCB;
+    font-weight: bold;
+}
+
+.gameInfo .game-situation .title div:first-child {
+    padding-left: 20px;
+}
+
+.gameInfo .game-situation .title div:last-child {
+    padding-right: 20px;
+    font-size: 0.9rem;
+}
+
+.gameInfo .game-situation .title .morAndMore a {
+    color: #67A7CA;
+}
+
+.gameInfo .game-situation .game-content {
+    display: flex;
+    margin-top: 19px;
+}
+
+.gameInfo .game-situation .game-content div img {
+    height: 135px;
+    width: 200px;
+}
+
+.gameInfo .game-situation .game-content .game-overview {
+    margin-left: 30px;
+}
+
+.gameInfo .game-situation .game-content .game-overview .tilte {
+    overflow: hidden;
+    width: 465px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-top: 10px;
+    font-size: 20px;
+}
+
+.gameInfo .game-situation .game-content .game-overview .time {
+    margin-top: 5px;
+}
+
+.gameInfo .game-situation .game-content .game-overview .time span {
+    font-size: 12px;
+    color: #B6B6B6;
+}
+
+.gameInfo .game-situation .game-content .game-overview .time span:last-child {
+    color: #6FACD9;
+}
+
+.gameInfo .game-situation .game-content .game-overview .text-content {
+    width: 465px;
+    height: 60px;
+    line-height: 30px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+
+    display: -moz-box;
+    -moz-line-clamp: 2;
+    -moz-box-orient: vertical;
+}
+
+.gameInfo .game-situation .game-content .game-overview .text-content a {
+    color: #8E8E8E;
+    font-size: 14px;
+    padding-top: 5px;
+    line-height: 20px;
+}
+
+.refereeDis .title {
+    height: 48px;
+    background-color: #188BCB;
+    line-height: 48px;
+    color: #ffffff;
+    font-weight: 700;
+    padding-left: 20px;
+    margin-top: 30px;
+}
+
+.refereeDis .chart {
+    width: 100%;
+    height: 500px;
+}
+
+.bjMapLeft, .colRight {
+    width: 49%;
+    display: inline-block;
+    border-radius: 10px;
+}
+
+.refereeDis .chartChooseTitle {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.refereeDis .chartChooseTitle button {
+    background-color: #FFFFFF;
+    outline: none;
+    border: 1px solid #9E9E9E;
+    padding: 5px 20px;
+    margin-left: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.refereeDis .chartChooseTitle .buttonActive {
+    background-color: #D72A1C;
+    color: #FFFFFF;
+}
+
+.mainpare5 .title {
+    background: #E3E3E3;
+    height: 40px;
+    line-height: 40px;
+    color: #FFFFFF;
+    padding-left: 30px;
+    background-repeat: no-repeat;
+    font-weight: bold;
+}
+
+.mainpare5 .moment-content {
+    /*margin-top: 20px;*/
+}
+
+.mainpare5 .moment-content .mainpare5left .left-top .big-img img {
+    width: 465px;
+    height: 260px;
+}
+
+.mainpare5 .moment-content .mainpare5left .left-top .small-img ul li img {
+    width: 64px;
+}
+
+.mainpare5 .moment-content .mainpare5left .left-top .small-img ul li {
+    padding: 3px;
+    display: inline-block;
+}
+
+.banner {
+    margin: 22px auto 0;
+    width: 495px;
+}
+
+.large_box {
+    margin-bottom: 10px;
+    width: 480px;
+    height: 320px;
+    overflow: hidden;
+}
+
+.large_box img {
+    display: block;
+}
+
+.large_box img:hover {
+    transform: scale(1.1);
+}
+
+.small_box {
+    width: 500px;
+    height: 73px;
+    overflow: hidden;
+}
+
+.small_list {
+    position: relative;
+    float: left;
+    width: 450px;
+    height: 73px;
+    overflow: hidden;
+}
+
+.small_list ul {
+    height: 50px;
+    overflow: hidden;
+}
+
+.small_list ul li {
+    position: relative;
+    float: left;
+    margin-right: 10px;
+    width: 100px;
+}
+
+.small_list ul li img {
+    display: block;
+}
+
+.small_list ul li .bun_bg {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 50px;
+    background: #FFF;
+    filter: alpha(opacity=60);
+    -moz-opacity: 0.6;
+    -khtml-opacity: 0.6;
+    opacity: 0.6;
+}
+
+.small_list ul li.on .bun_bg {
+    display: block;
+}
+
+.btns {
+    display: block;
+    width: 20px;
+    height: 50px;
+    background-color: #777;
+    background-repeat: no-repeat;
+    background-position: center center;
+    cursor: pointer;
+}
+
+.btns:hover {
+    background-color: #333;
+}
+
+.lefts_btn {
+    float: left;
+    margin-right: 10px;
+}
+
+.rights_btn {
+    float: right;
+}
+
+.left-bottom .banner {
+    margin: 0;
+}
+
+.mainpare5right.right .bottom {
+    margin-top: 15px;
+}
+
+.mainpare5right.right {
+    margin-top: 20px;
+    border: none;
+}
+
+.mainpare5right.right .top .right-title, .bottom .right-title {
+    display: flex;
+}
+
+.mainpare5right.right .top .right-title .title-text, .bottom .right-title .title-text {
+    font-size: 22px;
+    padding-left: 10px;
+    width: 625px;
+    word-break: keep-all;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 53px;
+}
+
+.mainpare5right.right .top .right-title .upperLeftCorner, .bottom .right-title .upperLeftCorner {
+    width: 49px;
+    height: 49px;
+    background-color: #D72A1C;
+    color: #FFFFFF;
+    font-size: 17px;
+    padding: 2px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.top .right-content, .bottom .right-content {
+    display: flex;
+    margin-top: 25px;
+}
+
+.top .right-content img:hover, .bottom .right-content img:hover {
+    transform: scale(1.1);
+}
+
+.top .right-content .right-content {
+    margin-top: 25px;
+}
+
+.right-content .bigPic {
+    width: 215px;
+}
+
+.right-content .bigPic a img {
+    height: 235px;
+    width: 215px;
+}
+
+.right-content .smallPic {
+    position: relative;
+    width: 700px;
+    height: 235px;
+}
+
+.right-content .smallPic ul {
+    float: left;
+}
+
+.right-content .smallPic ul li {
+    float: right;
+    padding-right: 5px;
+    padding-top: 5px;
+}
+
+.right-content .smallPic ul li a img {
+    width: 165px;
+    height: 110px;
+    padding: 1px;
+    padding-right: 2px;
+}
+
+#colRight div canvas {
+    top: 50px !important;
+}
+
+.namestylealter {
+    padding-left: 20px;
+}
+
+.pare1body > p > a:hover {
+    color: #408ED6;;
+}
+
+.img_show {
+    width: 20px;
+    height: 20px;
+}
+
+.footer_al_one {
+    line-height: 30px;
+    color: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.pareone1 > li > a {
+    font-size: 14px;
+    color: #6f6f6f;
+    line-height: 30px;
+}
+
+.pareone1 > li > span {
+    font-size: 14px;
+    color: #6f6f6f;
+
+}
+
+.paresdelper {
+    border-bottom: 1px solid #ccc;
+    line-height: 40px;
+    background: #E7E7E7;
+}
+
+.paresdelper span:first-child {
+    padding-left: 20px;
+}
+
+.alters > a {
+    color: #555;
+}
+
+.ons > a {
+    border-bottom: 2px solid #408ed6;
+    color: #408ed6;
+    font-size: 18px;
+}
+
+.ons {
+    line-height: 40px;
+}
+
+.mainpare3 .mainpare3-nav ul {
+    background-image: url("https://cdn.bjcac.org.cn/bjcac/images/registrationbg.png");
+    width: 100%;
+    height: 50px;
+    display: flex;
+    line-height: 50px;
+    justify-content: space-around;
+}
+
+.mainpare3 .mainpare3-nav ul li {
+    loat: left;
+    width: 25%;
+    text-align: center;
+    /*background-color: #2893D0;*/
+}
+
+.mainpare3 .mainpare3-nav ul li:hover {
+    font-weight: bold;
+    background-color: #0065BB;
+}
+
+.mainpare3 .mainpare3-nav ul li a {
+    color: #fff;
+}
+
+.mainpart .mainpare1 .pareright.right {
+
+}
+
+.hidden {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.large_box {
+    margin-bottom: 10px;
+    width: 480px;
+    height: 320px;
+    overflow: hidden;
+}

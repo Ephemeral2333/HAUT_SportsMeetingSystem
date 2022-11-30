@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.haut.mapper.StudentMapper">
+    <resultMap id="getStudentByNo" type="org.haut.entity.Student">
+        <id property="sId" column="s_id"/>
+        <result property="sNo" column="s_no"/>
+        <result property="sName" column="s_name"/>
+        <result property="sGender" column="s_gender"/>
+        <result property="sClassid" column="s_classid"/>
+        <result property="sPhone" column="s_phone"/>
+        <result property="sEmail" column="s_email"/>
+        <result property="sIdcard" column="s_IDcard"/>
+        <association property="user" column="s_no" select="org.haut.mapper.UserMapper.selectByPK"/>
+        <association property="classes" column="s_classid" select="org.haut.mapper.ClassesMapper.selectByPK"/>
+    </resultMap>
+
+    <insert id="insertStudent">
+        insert into student (s_no, s_name, s_email) values (#{arg0}, #{arg1}, #{arg2})
+    </insert>
+    <insert id="insert">
+        insert into student(s_no, s_name, s_gender, s_classid, s_phone, s_email, s_IDcard) values (#{sNo} ,#{sName},#{sGender} ,#{sClassid} ,#{sPhone} ,#{sEmail} ,#{sIdcard})
+    </insert>
+    <update id="update">
+        update student set s_name=#{sName}, s_gender=#{sGender},s_classid=#{sClassid} ,s_phone=#{sPhone} ,s_email=#{sEmail} ,s_IDcard=#{sIdcard} where s_id = #{sId}
+    </update>
+    <delete id="deleteByPK">
+        delete from student where s_no = #{arg0}
+    </delete>
+    <select id="selectEmailByUid" resultType="java.lang.String">
+        select s_email from student where s_no = #{arg0}
+    </select>
+    <select id="selectNameByUid" resultType="java.lang.String">
+        select s_name from student where s_no = #{arg0}
+    </select>
+    <select id="selectStudentByUid" resultType="org.haut.entity.Student" resultMap="getStudentByNo">
+        select * from student where s_no = #{arg0}
+    </select>
+    <select id="findAll" resultType="org.haut.entity.Student" resultMap="getStudentByNo">
+        select * from student
+    </select>
+    <select id="selectByPK" resultType="org.haut.entity.Student" resultMap="getStudentByNo">
+        select * from student where s_id = #{arg0}
+    </select>
+    <select id="selectByCid" resultType="org.haut.entity.Student" resultMap="getStudentByNo">
+        select * from student where s_classid = #{arg0}
+    </select>
+</mapper>

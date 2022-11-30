@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.haut.mapper.VolunteerMapper">
+<resultMap id="getAll" type="org.haut.entity.Volunteer">
+    <id property="vId" column="v_id"/>
+    <result property="vNo" column="v_no"/>
+    <result property="vName" column="v_name"/>
+    <result property="vGender" column="v_gender" />
+    <result property="vPhone" column="v_phone"/>
+    <result property="vEmail" column="v_email"/>
+    <result property="vIdcard" column="v_IDcard"/>
+</resultMap>
+    <insert id="insertVolunteer">
+        insert into volunteer(v_no, v_name, v_email) values (#{arg0}, #{arg1}, #{arg2})
+    </insert>
+    <insert id="insert">
+        insert into volunteer(v_no, v_name, v_gender, v_phone, v_email, v_IDcard) VALUE (#{vNo} ,#{vName} ,#{vGender} ,#{vPhone} ,#{vEmail} ,#{vIdcard})
+    </insert>
+    <update id="update">
+        update volunteer set v_name = #{vName} ,v_gender = #{vGender} ,v_phone = #{vPhone} ,v_email = #{vEmail} ,v_IDcard = #{vIdcard} where v_id = #{vId}
+    </update>
+    <delete id="deleteByVNo">
+        delete from volunteer where v_no = #{arg0}
+    </delete>
+    <select id="selectEmailByVid" resultType="java.lang.String">
+        select v_email from volunteer where v_no = #{arg0}
+    </select>
+    <select id="selectNameByVid" resultType="java.lang.String">
+        select v_name from volunteer where v_no = #{arg0}
+    </select>
+    <select id="findAll" resultType="org.haut.entity.Volunteer" resultMap="getAll">
+        select * from volunteer
+    </select>
+    <select id="selectByVID" resultType="org.haut.entity.Judge" resultMap="getAll">
+        select * from volunteer where v_id = #{arg0}
+    </select>
+</mapper>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.haut.mapper.MessageMapper">
+<resultMap id="getMess" type="org.haut.entity.Message">
+    <id property="mId" column="m_id"/>
+    <result property="mSno" column="m_sno"/>
+    <result property="mTitle" column="m_title"/>
+    <result property="mContent" column="m_content"/>
+    <result property="mTime" column="m_time"/>
+    <result property="mSender" column="m_sender"/>
+    <result property="mStatus" column="status"/>
+    <collection property="student" column="m_sno" select="org.haut.mapper.StudentMapper.selectStudentByUid"/>
+</resultMap>
+    <insert id="insertMessage">
+        insert into message(m_sno,m_title,m_content,m_time,m_sender,status)
+        values(#{mSno},#{mTitle},#{mContent},now(),#{mSender}, 0)
+    </insert>
+    <update id="update">
+        update message set status = 1 where m_id = #{arg0}
+    </update>
+    <update id="updateMessage">
+        update message set m_time = now(), status = 0, m_sno = #{mSno}, m_title = #{mTitle}, m_content = #{mContent} where m_id = #{mId}
+    </update>
+    <delete id="deleteByPK">
+        delete from message where m_id = #{arg0}
+    </delete>
+    <select id="selectByVNo" resultType="org.haut.entity.Message" resultMap="getMess">
+        select * from message where m_sender = #{arg0}
+    </select>
+    <select id="selectByPK" resultType="org.haut.entity.Message" resultMap="getMess">
+        select * from message where m_id = #{arg0}
+    </select>
+</mapper>

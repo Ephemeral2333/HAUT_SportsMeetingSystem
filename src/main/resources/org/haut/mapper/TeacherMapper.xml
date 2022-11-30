@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.haut.mapper.TeacherMapper">
+<resultMap id="getTea" type="org.haut.entity.Teacher">
+    <id property="tId" column="t_id"/>
+    <result property="tNo" column="t_no"/>
+    <result property="tName" column="t_name"/>
+    <result property="tGender" column="t_gender" />
+    <result property="tPhone" column="t_phone"/>
+    <result property="tEmail" column="t_email"/>
+    <result property="tIdentity" column="t_identity"/>
+    <result property="tIdcard" column="t_IDcard"/>
+</resultMap>
+
+    <insert id="insertTeacher">
+        insert into teacher (t_no, t_name, t_email) values (#{arg0}, #{arg1}, #{arg2})
+    </insert>
+    <insert id="insert">
+        insert into teacher(t_no, t_name, t_gender, t_identity, t_phone, t_email, t_IDcard) VALUE (#{tNo} ,#{tName} ,#{tGender} ,#{tIdentity} ,#{tPhone} ,#{tEmail} ,#{tIdcard})
+    </insert>
+    <update id="update">
+        update teacher set t_name = #{tName} ,t_gender = #{tGender} ,t_identity = #{tIdentity} ,t_phone = #{tPhone} ,t_email = #{tEmail} ,t_IDcard = #{tIdcard} where t_id = #{tId}
+    </update>
+    <delete id="deleteByPK">
+        delete from teacher where t_no = #{arg0}
+    </delete>
+    <select id="selectEmailByTid" resultType="java.lang.String">
+        select t_email from teacher where t_no = #{arg0}
+    </select>
+    <select id="selectNameByTid" resultType="java.lang.String">
+        select t_name from teacher where t_no = #{arg0}
+    </select>
+    <select id="selectByPK" resultType="org.haut.entity.Teacher" resultMap="getTea">
+        select * from teacher where t_id = #{arg0}
+    </select>
+    <select id="findAll" resultType="org.haut.entity.Teacher" resultMap="getTea">
+        select * from teacher
+    </select>
+</mapper>

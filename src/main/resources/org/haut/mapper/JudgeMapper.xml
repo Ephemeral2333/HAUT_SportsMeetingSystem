@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.haut.mapper.JudgeMapper">
+    <resultMap id="getAll" type="org.haut.entity.Judge">
+        <id property="jId" column="j_id"/>
+        <result property="jNo" column="j_no"/>
+        <result property="jName" column="j_name"/>
+        <result property="jGender" column="j_gender" />
+        <result property="jPhone" column="j_phone"/>
+        <result property="jEmail" column="j_email"/>
+        <result property="jIDcard" column="j_IDcard"/>
+    </resultMap>
+    <insert id="insertJudge">
+        insert into judge(j_no, j_name, j_email) values(#{arg0}, #{arg1}, #{arg2})
+    </insert>
+    <insert id="insert">
+        insert into judge(j_no, j_name, j_gender, j_phone, j_email, j_IDcard) VALUE (#{jNo} ,#{jName} ,#{jGender} ,#{jPhone} ,#{jEmail} ,#{jIDcard})
+    </insert>
+    <update id="update">
+        update judge set j_name = #{jName} ,j_gender = #{jGender} ,j_phone = #{jPhone} ,j_email = #{jEmail} ,j_IDcard = #{jIDcard} where j_id = #{jId}
+    </update>
+    <delete id="deleteByJNo">
+        delete from judge where j_no = #{arg0}
+    </delete>
+    <select id="selectEmailByJid" resultType="java.lang.String">
+        select j_email from judge where j_no = #{arg0}
+    </select>
+    <select id="selectNameByJid" resultType="java.lang.String">
+        select j_name from judge where j_no = #{arg0}
+    </select>
+    <select id="findAll" resultType="org.haut.entity.Judge" resultMap="getAll">
+        select * from judge
+    </select>
+    <select id="selectByPK" resultType="org.haut.entity.Judge" resultMap="getAll">
+        select * from judge where j_id = #{arg0}
+    </select>
+    <select id="selectByJID" resultType="org.haut.entity.Judge" resultMap="getAll">
+        select * from judge where j_id = #{arg0}
+    </select>
+</mapper>

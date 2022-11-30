@@ -1,0 +1,272 @@
+@charset "utf-8"; /*通用的css样式*/
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: " 微软雅黑 ";
+    border: none;
+}
+
+a {
+    text-decoration: none
+}
+
+.clearfix:after {
+    clear: both;
+    content: "";
+    display: block;
+    height: 0;
+    visibility: hidden;
+    line-height: 0;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+.clear {
+    clear: both;
+    height: 0;
+    width: 0;
+    display: block;
+    visibility: hidden;
+    overflow: hidden;
+}
+
+.textright {
+    text-align: right
+}
+
+.left {
+    float: left
+}
+
+.right {
+    float: right
+}
+
+.box-content {
+    max-width: 1920px;
+    min-width: 1200px;
+    filter:  grayscale(100%) !important;
+    margin: 0 auto;
+}
+
+.box-content .top {
+    width: 100%;
+    background: #fff;
+}
+
+.warp {
+    width: 1200px;
+    margin: 16px auto;
+    background: #fff;
+}
+
+.headertime {
+    padding-top: 17px;
+    padding-right: 21px;
+    padding-bottom: 16px;
+    text-align: right;
+    font-size: 10px;
+    color: #6f6f6f;
+}
+/*.header{ position:relative; background:url(/newsalter/images/header_bg.jpg) no-repeat scroll}*/
+.header {
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.logo p {
+    color: #1e6eb9;
+    font-size: 28px;
+    height: 36px;
+    padding-left: 108px;
+}
+
+.logo p.el {
+    font-size: 12px;
+    color: #408ed6;
+    padding-bottom: 30px;
+}
+
+.logo .logoimg {
+    width: 60px;
+    position: absolute;
+    top: 40px;
+    left: 20px;
+}
+
+.headertext {
+    border: 1px solid #cfcfcf;
+    height: 28px;
+    width: 215px;
+    line-height: 28px;
+    font-size: 16px;
+    color: #666;
+    padding-left: 4px;
+    border-radius: 5px 0 0 5px;
+}
+
+.headerinput button {
+    background: #408ed6;
+    color: #fff;
+    font-size: 14px;
+    padding: 6px 10px 5px 13px;
+    margin-left: -6px;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+}
+
+.headeron a {
+    color: #303030;
+    font-size: 14px;
+    padding-left: 15px;
+}
+
+.headeron .on {
+    color: #f82e2e;
+    font-size: 14px;
+    padding-right: 15px;
+    padding-left: 40px;
+}
+
+.headeron {
+    font-size: 14px;
+    vertical-align: -1px;
+}
+
+.headeron span {
+    color: #A2A2A2
+}
+/*.headerinput{ padding-top:8px; padding-right:21px;}*/
+.top-nav {
+    width: 100%;
+    background: #408ED6;
+}
+
+.nav {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.nav ul {
+    width: 100%;
+    background: #408ed6;
+}
+
+.nav ul li {
+    width: 190px;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    float: left;
+    position: relative;
+}
+
+.nav ul li .active {
+    color: #3793df;
+    background: #fff;
+}
+
+.nav ul li a {
+    color: #fff;
+    font-size: 16px;
+    display: inline-block;
+    height: 100%;
+    text-align: center;
+    text-decoration: none
+}
+
+.nav .current a.nul {
+    width: 126px;
+    background-color: #0065bb;
+    padding: 0 20px;
+}
+
+.nav ul.sub-ul {
+    padding: 0px;
+    width: 190px;
+    background: #0065bb;
+    position: absolute;
+    z-index: 20;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+    height: auto;
+    left: 0px;
+    width: 166px;
+    top: 50px;
+    left: 12px;
+}
+
+.nav ul.sub-ul li {
+    background: #0065bb;
+    float: none;
+    font-size: 12px;
+    line-height: 20px;
+    padding: 4px 0;
+    border-bottom: 1px solid #006EAD;
+    text-align: left;
+    width: 166px;
+    height: 40px;
+    margin-bottom: 5px;
+}
+
+.nav ul.sub-ul li:last-child {
+    margin-bottom: 0px;
+}
+
+.nav ul.sub-ul li:first-child {
+    margin-left: 0px;
+}
+
+.nav ul li:first-child {
+    margin-left: 2px;
+}
+
+.nav ul.sub-ul li a {
+    font-size: 14px;
+    color: #fff;
+    padding: 0 11px;
+    display: block;
+    white-space: nowrap;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.nav ul li.current .sub-ul {
+    display: block;
+}
+
+.nav ul.sub-ul li.subcurrent {
+    background: #408ed6
+}
+
+.mainpart {
+    min-height: 1126px;
+    padding-bottom: 15px;
+}
+
+.footer {
+    background: #404040;
+    color: #ffffff;
+    font-size: 13px;
+    padding: 18px 0px;
+    line-height: 25px;
+    text-align: center;
+    min-width:1200px;
+    max-width:1960px;
+}
+
+.footer .footerin {
+    width: 700px;
+    margin: 0 auto;
+    position: relative
+}
+
+.footer .footerlogo {
+    position: absolute;
+    right: 85px;
+    top: 5px;
+}

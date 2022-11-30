@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <properties resource="db.properties"/>
+    <!-- 配置开发环境信息 -->
+    <environments default="mysql">
+        <environment id="mysql">
+            <!-- 使用JDBC事务管理器，目前由MyBatis管理 -->
+            <transactionManager type="JDBC"/>
+            <!-- 配置DataSource标准数据源，目前由MyBatis管理 -->
+            <dataSource type="POOLED">
+                <property name="driver" value="${jdbc.driver}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <mappers>
+        <mapper resource="org/haut/mapper/UserMapper.xml"/>
+        <mapper resource="org/haut/mapper/RoleMapper.xml"/>
+        <mapper resource="org/haut/mapper/StudentMapper.xml"/>
+        <mapper resource="org/haut/mapper/TeacherMapper.xml"/>
+        <mapper resource="org/haut/mapper/JudgeMapper.xml"/>
+        <mapper resource="org/haut/mapper/VolunteerMapper.xml"/>
+        <mapper resource="org/haut/mapper/RoleUserMapper.xml"/>
+        <mapper class="org.haut.mapper.BorrowMapper"/>
+        <mapper class="org.haut.mapper.BroadcastMapper"/>
+        <mapper class="org.haut.mapper.ClassesMapper"/>
+        <mapper class="org.haut.mapper.DepartmentMapper"/>
+        <mapper class="org.haut.mapper.EventMapper"/>
+        <mapper class="org.haut.mapper.EquipmentMapper"/>
+        <mapper class="org.haut.mapper.ISysLogMapper"/>
+        <mapper class="org.haut.mapper.MatchesMapper"/>
+        <mapper class="org.haut.mapper.OtherMapper"/>
+        <mapper class="org.haut.mapper.SportmeetingMapper"/>
+        <mapper class="org.haut.mapper.MessageMapper" />
+    </mappers>
+</configuration>

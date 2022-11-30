@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace属性相当于映射文件的名称 属性值任意-->
+<mapper namespace="org.haut.mapper.UserMapper">
+    <resultMap id="allMap" type="org.haut.entity.User">
+        <id column="u_id" property="uId"/>
+        <result column="u_password" property="uPassword"/>
+        <result column="u_status" property="uStatus"/>
+        <collection property="borrow" column = "u_id" select="org.haut.mapper.BorrowMapper.selectBybNo" />
+        <collection property="matches" column="u_id" select="org.haut.mapper.MatchesMapper.selectBymNo" />
+    </resultMap>
+
+    <resultMap id="selectToS" type="org.haut.entity.User">
+        <id column="u_id" property="uId"/>
+        <result column="u_password" property="uPassword"/>
+        <result column="u_status" property="uStatus"/>
+        <association property="student" column="u_id" select="org.haut.mapper.StudentMapper.selectStudentByUid" />
+    </resultMap>
+
+    <insert id="insertUser">
+        insert into user (u_id, u_password, u_status)
+        values (#{arg0}, #{arg1}, 1)
+    </insert>
+    <insert id="insert">
+        insert into user (u_id, u_password, u_status)
+        values (#{arg0}, #{arg1}, #{arg2})
+    </insert>
+    <update id="updatePwd">
+        update user set u_password = #{arg1} where u_id = #{arg0}
+    </update>
+    <delete id="deleteByPK">
+        delete from user where u_id = #{arg0}
+    </delete>
+    <!-- resultType属性指定结果的类型 -->
+    <select id="findUserList" resultType="org.haut.entity.User" resultMap="allMap">
+        select * from user
+    </select>
+
+    <select id="getUserPassword" resultType="java.lang.String">
+        select u_password from user where u_id = #{arg0}
+    </select>
+    <select id="selectByPK" resultType="org.haut.entity.User" resultMap="allMap">
+        select * from user where u_id = #{arg0}
+    </select>
+    <select id="selectByPKToS" resultType="org.haut.entity.User" resultMap="selectToS">
+        select * from user where u_id = #{arg0}
+    </select>
+</mapper>
